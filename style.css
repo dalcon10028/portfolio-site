@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:400,700&display=swap&subset=korean');
+
+*{margin: 0; padding: 0; color: #425066;font-family: 'Noto Sans KR', sans-serif;}
+ul{overflow: hidden;}
+ul li{list-style: none; float: left;}
+ul a{float: left;}
+a{text-decoration: none;}
+
+/* 초기화 */
+
+section{
+    overflow: hidden;
+    height: 64rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main{
+    background-image: url(/img/main.png);
+    height: 32rem;
+}
+#summery{
+    background-color: #fafafa;
+}
+
+#contents{
+    background-color: #425066;
+}
+
+#contact{
+    background-color: #fff4f0;
+}
+h2{
+    color: white;
+    font-size: 2.5rem;
+    opacity: .9;
+}
+section:nth-child(even) h2{
+    color: #425066;
+}
+.title-text{
+    margin: 25rem 0 0 9.3rem;
+}
+/* 섹션설정 */
+
+header{
+    overflow: hidden; 
+    /* background-color: rgba( 255, 255, 255, 0.2 ); */
+    /* box-shadow: 0 0 1rem #575757;     */
+}
+h1 a{
+    margin: 1rem 0 1rem 10rem;
+    float: left;
+    color: white;
+}
+h1 a i{color: white;}
+nav{
+    margin: 1rem 10rem 0 0;
+    float: right;
+}
+nav ul li{
+    color: white;
+    padding: 0 1rem;
+    line-height: 2.3rem;
+}
+nav ul li:hover{
+    color: #4cb7db;
+    transition-duration: .6s;
+}
+
+.main-text {
+    color: white;
+    margin: 8rem 0 0 9.3rem;
+}
+
+.main-button{
+    margin: 1.2rem 0 0 9.5rem;
+}
+.main-button button{
+    margin-right: 1.0rem;
+    color: white;
+    background: none;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+.main-button button:hover{
+    color: #4cb7db;
+    border: 1px solid #4cb7db;
+    transition-duration: .6s;
+}
+/* 메인 끝 */
+
+footer{
+    padding-bottom: 3rem;
+    background-color: #eaecdb;
+    height: 7rem;
+}
+
+footer address{
+    padding-top: 2.5rem;
+    text-align: center;
+    font-style: normal;
+}
+
+footer p{
+    text-align: center;
+}
+footer p i{
+    margin-top: 1.7rem;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+footer p a i:hover{transition-duration: .6s;}
+footer p a:nth-child(1) i:hover{color: #4267b2;}
+footer p a:nth-child(2) i:hover{color: black;}
+footer p a:nth-child(3) i:hover{color: #d23363;}
+footer p a:nth-child(4) i:hover{color: #3b1e1e;}
