@@ -7,7 +7,7 @@ ul a{float: left;}
 a{text-decoration: none;}
 
 /* 초기화 */
-
+/* 섹션 공통 설정 시작 */
 section{
     overflow: hidden;
     height: 64rem;
@@ -16,68 +16,78 @@ section{
 }
 
 #main{
-    background-image: url(/img/main.png);
-    height: 32rem;
+    background-image: url(main_background.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    min-height: 568px;
 }
 #summery{
-    background-color: #fafafa;
+    background-color: #42506641;
 }
 
 #contents{
-    background-color: #425066;
+    background-color: #42506641;
 }
 
 #contact{
-    background-color: #fff4f0;
+    background-color: #42506641;
 }
 h2{
     color: white;
     font-size: 2.5rem;
-    opacity: .9;
+    font-weight: normal;
 }
 section:nth-child(even) h2{
     color: #425066;
 }
-.title-text{
-    margin: 25rem 0 0 9.3rem;
-}
-/* 섹션설정 */
+.active-tab{font-weight: bold;}
+.left-contents{float: left; width: 70vw;}
+.right-contents{float: right; width: 30vw;}
+.title-text{margin: 25rem 0 0 9.3rem;}
+/* 섹션 공통 설정 끝*/
+/* 헤더 기본 시작 */
+header{overflow: hidden;}
+header h1 a{margin: 1rem 0 1rem 10rem; float: left;}
+header nav{margin: 1rem 10rem 0 0; float: right;}
+header nav ul li{padding: 0 1rem; line-height: 2.3rem;}
+.init-header h1 a, .init-header h1 a i, .init-header nav ul li a{color: white;}
 
-header{
-    overflow: hidden; 
-    /* background-color: rgba( 255, 255, 255, 0.2 ); */
-    /* box-shadow: 0 0 1rem #575757;     */
+/* 헤더 기본 끝 */
+/* 헤더 효과 시작 */
+.header-clone{  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background: rgba(255, 255, 255, .8);
+    visibility: hidden;
+    transition: .3s linear;
+    transform: translateY(-100%);
 }
-h1 a{
-    margin: 1rem 0 1rem 10rem;
+.visible{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header-clone h1 a, .header-clone h1 a i, .header-clone nav ul li a{color: midnightblue;}
+
+/* 헤더 효과 끝 */
+/* 메인 시작 */
+#main .main-text {
     float: left;
-    color: white;
-}
-h1 a i{color: white;}
-nav{
-    margin: 1rem 10rem 0 0;
-    float: right;
-}
-nav ul li{
-    color: white;
-    padding: 0 1rem;
-    line-height: 2.3rem;
-}
-nav ul li:hover{
-    color: #4cb7db;
-    transition-duration: .6s;
-}
-
-.main-text {
-    color: white;
     margin: 8rem 0 0 9.3rem;
 }
-
-.main-button{
+#main .main-button{
+    float: left;
     margin: 1.2rem 0 0 9.5rem;
 }
-.main-button button{
+#main .main-button button{
     margin-right: 1.0rem;
+    padding-bottom: 0rem;
     color: white;
     background: none;
     width: 10rem;
@@ -86,16 +96,37 @@ nav ul li:hover{
     border: 1px solid white;
     border-radius: 4px;
 }
-.main-button button:hover{
-    color: #4cb7db;
-    border: 1px solid #4cb7db;
-    transition-duration: .6s;
-}
 /* 메인 끝 */
+/* 요약 시작 */
+#summery article h2 span{font-weight: bold;}
 
+/* 요약 끝 */
+/* 내용 시작 */
+#contents .parallax .title-text{
+    margin: 15rem 0 0 9.3rem;
+    padding-top: 10rem;
+}
+#contents .parallax{
+    height: 57%;
+    background: url(contents.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#contents .tab-contents{margin: 1rem 0 0 9.3rem}
+#contents .tab-contents ul li{
+    margin-right: 1.5rem;
+    padding-bottom: .3rem;
+    border-bottom: white 2px solid;
+}
+#contents .tab-contents ul li a{color: white;}
+#contents .tab-contents .tab-body{margin-top: 1rem; width: 30rem;}
+#contents .tab-contents .tab-body p{color: white;} 
+
+/* 내용 끝 */
+/* 푸터 시작 */
 footer{
     padding-bottom: 3rem;
-    background-color: #eaecdb;
+    background-color: white;
     height: 7rem;
 }
 
@@ -118,3 +149,38 @@ footer p a:nth-child(1) i:hover{color: #4267b2;}
 footer p a:nth-child(2) i:hover{color: black;}
 footer p a:nth-child(3) i:hover{color: #d23363;}
 footer p a:nth-child(4) i:hover{color: #3b1e1e;}
+/* 푸터 끝 */
+@media screen and (max-width:768px){
+
+    /* 공통 시작 */
+    h2{font-size: 2rem;text-align: center;}
+    .left-contents{float: none; width: 100%;}
+    .right-contents{display: none;}
+    .title-text{margin: 25rem 0 0 0;}
+    /* 공통 끝 */
+    /* 헤더 시작 */
+    .init-header{display: none;}
+    header h1 a{margin: .3rem 0 .3rem 1rem; float: left;}
+    header nav{margin: .3rem 1rem 0 0; float: right;}
+    /* 헤더 끝 */
+    /* 메인 시작 */
+    #main{width: 100%;background-size: 50rem;}
+    #main .main-text{float: none; margin:8rem 0 0 0;}
+    #main .main-button{float: none; margin: 2rem 0 0 0; text-align: center;}
+    #main .main-button button{margin-right: .3rem;}
+    #main .main-button button:last-child{margin-right: none;}
+    /* 메인 끝 */
+    /* 내용 시작 */
+    #contents .parallax{height: 70%; background-size: 50rem;}
+    #contents .parallax .title-text{
+        margin-top: 10rem;
+        margin-left: 0;
+        padding-top: 10rem;
+    }
+    #contents .tab-contents{margin-left: 0;}
+    #contents .tab-contents ul{display: table; margin: 0 auto;}
+    #contents .tab-contents ul li a{text-align: center;}
+    #contents .tab-contents .tab-body{width: inherit;}
+    #contents .tab-contents .tab-body p{text-align: center;}
+    /* 내용 끝 */
+}
